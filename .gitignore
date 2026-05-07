@@ -18,3 +18,4 @@ Thumbs.db
 
 # IDE specific caches
 **/.idea_modules/
+*.zip
