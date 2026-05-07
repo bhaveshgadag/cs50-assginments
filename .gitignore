@@ -1,20 +1,20 @@
 #Java
 *.class
-./out/
-./target/
+**/out/
+**/target/
 *.jar
 
 #IntelliJ
-./.idea/
+**/.idea/
 *.iml
 
 # Build tools
-./.gradle/
-./build/
+**/.gradle/
+**/build/
 
 # OS
 .DS_Store
 Thumbs.db
 
 # IDE specific caches
-./.idea_modules/
+**/.idea_modules/
