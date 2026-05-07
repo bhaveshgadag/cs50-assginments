@@ -5,16 +5,16 @@ public class Minesweeper {
         n = Integer.parseInt(args[1]);
         k = Integer.parseInt(args[2]);
 
-        if (k < (m * n)) {
+        if (k <= (m * n)) {
             int[][] board = new int[m][n];
-
-            for (int i = 0; i < k; ) {
+            int a = 0;
+            while (a < k) {
                 int r = (int) (Math.random() * m);
                 int c = (int) (Math.random() * n);
 
                 if (board[r][c] != -1) {
                     board[r][c] = -1;
-                    i++;
+                    a++;
                 }
             }
 
@@ -60,9 +60,6 @@ public class Minesweeper {
                 }
                 System.out.println();
             }
-        }
-        else{
-            System.out.print("k cant be more than m*n");
         }
     }
 }

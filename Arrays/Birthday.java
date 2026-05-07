@@ -10,7 +10,8 @@ public class Birthday {
         while (c < trials) {
             boolean flag = false;
             int x = 0;
-            int[] room = new int[365];
+            int days = 365;
+            int[] room = new int[days];
             while (!flag) {
                 int bday = (int) (Math.random() * n);
                 for (int i = 0; i < room.length; i++) {
@@ -27,7 +28,7 @@ public class Birthday {
             c++;
         }
 
-        long[] result = new long[365];
+        long[] result = new long[days];
         for (int i = 0; i < exp.length; i++) {
             result[exp[i]]++;
         }

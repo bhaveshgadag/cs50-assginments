@@ -7,7 +7,7 @@ public class ThueMorse {
         int[] t1 = new int[1];
         t1[0] = 0;
 
-        while (t1.length < (m)){
+        while (t1.length < (m)) {
             int[] t2 = new int[t1.length];
             for (int i = 0; i < t1.length; i++) {
                 if (t1[i] == 0)
