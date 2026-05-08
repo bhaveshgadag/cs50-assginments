@@ -5,12 +5,12 @@ public class Birthday {
         trials = Integer.parseInt(args[1]);
 
         int[] exp = new int[trials];
+        int days = 365;
 
         int c = 0;
         while (c < trials) {
             boolean flag = false;
             int x = 0;
-            int days = 365;
             int[] room = new int[days];
             while (!flag) {
                 int bday = (int) (Math.random() * n);
