@@ -7,31 +7,17 @@ public class DiscreteDistribution {
             prob[i-1] = Integer.parseInt(args[i]);
         }
 
-//        ==================
-        for (int i = 0; i < prob.length; i++) {
-            System.out.print(prob[i]);
-        }
-        System.out.println();
-//        ==================================
         int[] sum = new int[prob.length + 1];
         sum[0] = 0;
         for (int i = 1; i < sum.length; i++) {
             sum[i] = sum[i - 1] + prob[i - 1];
         }
-//        ==================
-        for (int i = 0; i < sum.length; i++) {
-            System.out.print(sum[i]);
-        }
-        System.out.println();
-//        ===================================
-
 
         for (int i = 0; i < m; i++) {
-            int r = (int) (Math.random() * (sum[sum.length - 1]));
-            System.out.println(r);
+            int r = (int) (Math.random() * (sum[sum.length - 1] - 1));
             for (int j = 0; j < sum.length; j++) {
-                if ((r > sum[j]) && (r < sum[j+1])) {
-                    System.out.print(j + " ");
+                if ((r >= sum[j]) && (r < sum[j+1])) {
+                    System.out.print((j + 1) + " ");
                 }
             }
         }
