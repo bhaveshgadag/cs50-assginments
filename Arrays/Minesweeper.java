@@ -9,8 +9,9 @@ public class Minesweeper {
             int[][] board = new int[m][n];
             int a = 0;
             while (a < k) {
-                int r = (int) (Math.random() * m);
-                int c = (int) (Math.random() * n);
+                int cell = (int) (Math.random() * (m * n));
+                int r = cell / n;
+                int c = cell % n;
 
                 if (board[r][c] != -1) {
                     board[r][c] = -1;
