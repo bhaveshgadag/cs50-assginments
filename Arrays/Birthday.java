@@ -5,13 +5,13 @@ public class Birthday {
         trials = Integer.parseInt(args[1]);
 
         int[] exp = new int[trials];
-        int days = 365;
+//        int days = 365;
 
         int c = 0;
         while (c < trials) {
             boolean flag = false;
             int x = 0;
-            int[] room = new int[days];
+            int[] room = new int[n];
             while (!flag) {
                 int bday = (int) (Math.random() * n);
                 for (int i = 0; i < room.length; i++) {
@@ -28,7 +28,7 @@ public class Birthday {
             c++;
         }
 
-        long[] result = new long[days];
+        long[] result = new long[n];
         for (int i = 0; i < exp.length; i++) {
             result[exp[i]]++;
         }
