@@ -31,7 +31,7 @@ public class DiscreteDistribution {
             System.out.println(r);
             for (int j = 0; j < sum.length; j++) {
                 if ((r > sum[j]) && (r < sum[j+1])) {
-                    System.out.print((j )+ " ");
+                    System.out.print(j + " ");
                 }
             }
         }
