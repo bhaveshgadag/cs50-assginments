@@ -13,7 +13,7 @@ public class Birthday {
             int x = 0;
             int[] room = new int[n];
             while (!flag) {
-                int bday = (int) (Math.random() * n);
+                int bday = (int) (Math.random() * (n - 1));
                 for (int i = 0; i < room.length; i++) {
                     if (room[i] == bday) {
                         flag = true;
@@ -37,7 +37,7 @@ public class Birthday {
         for (int i = 0; i < result.length; i++) {
             fraction = fraction + result[i];
             System.out.print((i+1)+"\t"+result[i] + "\t"+(fraction/trials));
-            if (fraction/trials > 0.5)
+            if (fraction/trials >= 0.5)
                 break;
             System.out.println();
         }
