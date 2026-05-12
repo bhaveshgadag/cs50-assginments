@@ -14,10 +14,11 @@ public class DiscreteDistribution {
         }
 
         for (int i = 0; i < m; i++) {
-            int r = (int) (Math.random() * (sum[sum.length - 1] - 1));
+            int r = (int) (Math.random() * (sum[sum.length - 1]));
             for (int j = 0; j < sum.length; j++) {
                 if ((r >= sum[j]) && (r < sum[j+1])) {
                     System.out.print((j + 1) + " ");
+                    break;
                 }
             }
         }
