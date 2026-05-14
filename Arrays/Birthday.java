@@ -5,30 +5,41 @@ public class Birthday {
         trials = Integer.parseInt(args[1]);
 
         int[] exp = new int[trials];
-//        int days = 365;
 
         int c = 0;
         while (c < trials) {
             boolean flag = false;
-            int x = 0;
-            int[] room = new int[n];
-            while (!flag) {
-                int bday = (int) (Math.random() * (n - 1));
-                for (int i = 0; i < room.length; i++) {
+            int p = 0; // person number
+            int[] room = new int[n]; // Reset room for new trial
+            // Start trial
+            while (!flag && p < room.length) {
+                int bday = (int) (Math.random() *  n );
+                boolean found = false;
+                for (int i = 0; i < p; i++) {
+                    // Check if person with same birthdate is in room
                     if (room[i] == bday) {
-                        flag = true;
-                        room[x] = bday;
+                        // if found have that person enter room and stop trial
+                        found = true; // change flag to stop trial
                         break;
                     }
                 }
-                room[x] = bday;
-                x++;
+                // duplicate found, end exp
+                if (found) {
+                    flag = true;
+                }
+                // duplicate not found, add person with birthday to room
+                else {
+                    if (p < n) {
+                        room[p] = bday;
+                        p++;
+                    }
+                }
             }
-            exp[c] = x;
+            exp[c] = p; // store pth person when duplicate found
             c++;
         }
 
-        long[] result = new long[n];
+        long[] result = new long[n + 1];
         for (int i = 0; i < exp.length; i++) {
             result[exp[i]]++;
         }
